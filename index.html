@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="box">
+	<h1>Coffee List</h1>
+    {% if not logged_in: %}
+  <a href="{{ url_for('login') }}" class="btn btn-primary btn-block btn-large">Login</a>
+  <a href="{{ url_for('register') }}" class="btn btn-secondary btn-block btn-large">Register</a>
+    {% endif %}
+
+
+  <table border="" class="table table-dark">
+    <caption>Lista de Cafes</caption>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Coffee Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for cafe in cafes %}
+    <tr>
+      <td>{{ cafe.name }}</td>
+      <td>{{ cafe.location }}</td>
+      <td>{{ cafe.coffee_price}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

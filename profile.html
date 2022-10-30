@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if not logged_in: %}
+<div>
+    <h1>Sem registros para ver. Logue e veja!</h1>
+</div>
+
+{% else: %}
+<table border="1" class="table table-dark">
+    <tbody>
+    <tr>
+      <th>Nome:</th>
+       <td>{{ user.name }}</td>
+    </tr>
+    <tr>
+       <th>Email:</th>
+       <td>{{ user.email }}</td>
+   </tr>
+    </tbody>
+  </table>
+
+{% endif %}
+{% endblock %}

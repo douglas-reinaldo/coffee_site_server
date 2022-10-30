@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="box">
+    <h1>Add New Cafe</h1>
+    <form action="{{ url_for('add') }}" method="post">
+        <input type="text" name="name" placeholder="Name" required="required" />
+        <input type="text" name="location" placeholder="Location" required="required" />
+        <input type="text" name="seats" placeholder="Seats" required="required" />
+        <input type="text" name="coffee_price" placeholder="Coffee Price" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Adicionar.</button>
+    </form>
+</div>
+
+{% endblock %}
